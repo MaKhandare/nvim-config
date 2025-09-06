@@ -92,6 +92,10 @@ vim.pack.add({
 
     -- gitsigns
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
+
+    -- lsps, linter, formatter
+    { src = "https://github.com/mason-org/mason.nvim" },
+
 })
 
 vim.cmd.colorscheme("gruvbox")
@@ -108,7 +112,18 @@ vim.keymap.set("n", "gi", builtin.lsp_implementations)
 require("oil").setup()
 vim.keymap.set("n", "<leader>o", ":Oil<CR>")
 
-vim.lsp.enable({ "lua_ls", "rust_analyzer" })
+require("mason").setup()
+vim.keymap.set("n", "cm", ":Mason<CR>")
+
+vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
+vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
+
+vim.lsp.enable({
+    "lua_ls",
+    "rust_analyzer",
+    "omnisharp",
+    "typescript-language-server"
+})
 
 vim.lsp.config("lua_ls", {
     settings = {
@@ -119,7 +134,6 @@ vim.lsp.config("lua_ls", {
         }
     }
 })
-
 
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 vim.keymap.set('n', 'gs', vim.diagnostic.open_float)
