@@ -96,6 +96,12 @@ vim.pack.add({
     -- lsps, linter, formatter
     { src = "https://github.com/mason-org/mason.nvim" },
 
+    -- auto complete
+    {
+        src = "https://github.com/saghen/blink.cmp",
+        version = vim.version.range("1.*")
+    },
+
 })
 
 vim.cmd.colorscheme("gruvbox")
@@ -117,6 +123,30 @@ vim.keymap.set("n", "cm", ":Mason<CR>")
 
 vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
 vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
+
+require("blink.cmp").setup({
+    keymap = {
+        preset = "default",
+        ["<C-c>"] = { "select_and_accept", "fallback" },
+    },
+    appearance = {
+        nerd_font_variant = "mono"
+    },
+    completion = {
+        documentation = {
+            auto_show = true
+        },
+        ghost_text = {
+            enabled = true
+        }
+    },
+    sources = {
+        default = { "lsp", "path", "snippets", "buffer" }
+    },
+    fuzzy = {
+        implementation = "lua"
+    }
+})
 
 vim.lsp.enable({
     "lua_ls",
