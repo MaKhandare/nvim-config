@@ -109,6 +109,9 @@ vim.pack.add({
 
 vim.cmd.colorscheme("gruvbox")
 
+vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
+vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
+
 require("telescope").setup()
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files)
@@ -123,9 +126,6 @@ vim.keymap.set("n", "<leader>o", ":Oil<CR>")
 
 require("mason").setup()
 vim.keymap.set("n", "cm", ":Mason<CR>")
-
-vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
-vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
 
 require("blink.cmp").setup({
     keymap = {
@@ -151,7 +151,8 @@ require("blink.cmp").setup({
     }
 })
 
--- futuremat: you gotta install with :TSInstall <language> if needed
+-- so far only python is needed.
+-- rest seems to work good enough for now?
 require("nvim-treesitter.configs").setup({
     ensure_installed = { "python" },
     sync_install = false,
