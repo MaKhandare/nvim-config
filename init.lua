@@ -151,9 +151,16 @@ require("blink.cmp").setup({
     }
 })
 
-require("nvim-treesitter.configs").setup(
-    { highlight = { enable = true } }
-)
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "python" },
+    sync_install = false,
+    auto_install = false,
+    highlight = {
+        enable = true
+    },
+    ignore_install = {},
+    modules = {}
+})
 
 vim.lsp.enable({
     "lua_ls",
