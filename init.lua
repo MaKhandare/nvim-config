@@ -102,6 +102,9 @@ vim.pack.add({
         version = vim.version.range("1.*")
     },
 
+    -- syntax highlighting
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+
 })
 
 vim.cmd.colorscheme("gruvbox")
@@ -148,6 +151,10 @@ require("blink.cmp").setup({
     }
 })
 
+require("nvim-treesitter.configs").setup(
+    { highlight = { enable = true } }
+)
+
 vim.lsp.enable({
     "lua_ls",
     "rust_analyzer",
@@ -161,6 +168,16 @@ vim.lsp.config("lua_ls", {
         Lua = {
             workspace = {
                 library = vim.api.nvim_get_runtime_file("", true),
+            }
+        }
+    }
+})
+
+vim.lsp.config("pylsp", {
+    settings = {
+        pylsp = {
+            signature = {
+                formatter = "ruff"
             }
         }
     }
