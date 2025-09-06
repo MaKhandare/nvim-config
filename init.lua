@@ -152,7 +152,8 @@ vim.lsp.enable({
     "lua_ls",
     "rust_analyzer",
     "omnisharp",
-    "typescript-language-server"
+    "typescript-language-server",
+    "pylsp"
 })
 
 vim.lsp.config("lua_ls", {
