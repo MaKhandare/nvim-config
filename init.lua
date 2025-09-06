@@ -37,6 +37,8 @@ vim.opt.inccommand = "split"
 
 vim.opt.winborder = "rounded"
 
+vim.diagnostic.config({ virtual_text = true })
+
 -- highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -52,7 +54,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --
 
 vim.g.mapleader = " "
-
 
 -- vim.keymap.set("n", "<leader>o", ":update<CR> :source<CR> :nohlsearch<CR>")
 
@@ -88,6 +89,9 @@ vim.pack.add({
 
     -- searching
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
+
+    -- gitsigns
+    { src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 
 vim.cmd.colorscheme("gruvbox")
@@ -104,7 +108,7 @@ vim.keymap.set("n", "gi", builtin.lsp_implementations)
 require("oil").setup()
 vim.keymap.set("n", "<leader>o", ":Oil<CR>")
 
-vim.lsp.enable({ "lua_ls" })
+vim.lsp.enable({ "lua_ls", "rust_analyzer" })
 
 vim.lsp.config("lua_ls", {
     settings = {
