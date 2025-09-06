@@ -151,6 +151,7 @@ require("blink.cmp").setup({
     }
 })
 
+-- futuremat: you gotta install with :TSInstall <language> if needed
 require("nvim-treesitter.configs").setup({
     ensure_installed = { "python" },
     sync_install = false,
