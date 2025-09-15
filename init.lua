@@ -105,7 +105,12 @@ vim.pack.add({
     -- syntax highlighting
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 
+    -- auto pair
+    { src = "https://github.com/windwp/nvim-autopairs" },
+
 })
+
+require("nvim-autopairs").setup()
 
 vim.cmd.colorscheme("gruvbox")
 
