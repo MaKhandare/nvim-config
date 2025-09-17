@@ -126,7 +126,9 @@ vim.keymap.set("n", "<leader>d", builtin.diagnostics)
 vim.keymap.set("n", "gr", builtin.lsp_references)
 vim.keymap.set("n", "gi", builtin.lsp_implementations)
 
-require("oil").setup()
+require("oil").setup({
+    skip_confirm_for_simple_edits = true
+})
 vim.keymap.set("n", "<leader>o", ":Oil<CR>")
 
 require("mason").setup()
