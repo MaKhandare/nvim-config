@@ -173,9 +173,12 @@ vim.lsp.enable({
     "lua_ls",
     "rust_analyzer",
     "omnisharp",
-    "typescript-language-server",
-    "pylsp"
+    -- "typescript-language-server",
+    "pylsp",
+    "terraformls"
 })
+
+vim.lsp.config("terraformls", {})
 
 vim.lsp.config("lua_ls", {
     settings = {
