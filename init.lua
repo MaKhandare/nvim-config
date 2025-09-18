@@ -108,7 +108,13 @@ vim.pack.add({
     -- auto pair
     { src = "https://github.com/windwp/nvim-autopairs" },
 
+    -- learning nvim lol
+    { src = "https://github.com/m4xshen/hardtime.nvim" },
+
+
 })
+
+require("hardtime").setup()
 
 require("nvim-autopairs").setup()
 
