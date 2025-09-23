@@ -134,7 +134,12 @@ vim.keymap.set("n", "gr", builtin.lsp_references)
 vim.keymap.set("n", "gi", builtin.lsp_implementations)
 
 require("oil").setup({
-    skip_confirm_for_simple_edits = true
+    skip_confirm_for_simple_edits = true,
+
+    keymaps = {
+        ["<C-h>"] = false,
+        ["<C-l>"] = false
+    }
 })
 vim.keymap.set("n", "<leader>o", ":Oil<CR>")
 
