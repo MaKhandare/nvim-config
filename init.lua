@@ -108,13 +108,7 @@ vim.pack.add({
     -- auto pair
     { src = "https://github.com/windwp/nvim-autopairs" },
 
-    -- learning nvim lol
-    { src = "https://github.com/m4xshen/hardtime.nvim" },
-
-
 })
-
-require("hardtime").setup()
 
 require("nvim-autopairs").setup()
 
@@ -123,7 +117,14 @@ vim.cmd.colorscheme("gruvbox")
 vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
 vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
 
-require("telescope").setup()
+require("telescope").setup({
+    pickers = {
+        find_files = {
+            theme = "ivy"
+        }
+    }
+})
+
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files)
 vim.keymap.set("n", "<leader>g", builtin.live_grep)
