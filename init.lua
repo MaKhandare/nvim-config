@@ -108,6 +108,16 @@ vim.pack.add({
     -- auto pair
     { src = "https://github.com/windwp/nvim-autopairs" },
 
+    -- markdown rendering
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+
+})
+
+require('render-markdown').setup({
+    completions = { lsp = { enabled = true } },
+    sign = {
+        enabled = false
+    }
 })
 
 require("nvim-autopairs").setup()
@@ -193,7 +203,8 @@ vim.lsp.enable({
     "omnisharp",
     -- "typescript-language-server",
     "pylsp",
-    "terraformls"
+    "terraformls",
+    "marksman"
 })
 
 vim.lsp.config("terraformls", {})
