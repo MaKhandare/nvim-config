@@ -75,8 +75,9 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 --
 
 vim.pack.add({
-    -- colorscheme
+    -- colorschemes
     { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+    { src = "https://github.com/rebelot/kanagawa.nvim" },
 
     -- lsp
     { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -108,21 +109,24 @@ vim.pack.add({
     -- auto pair
     { src = "https://github.com/windwp/nvim-autopairs" },
 
-    -- markdown rendering
-    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
-
 })
 
-require('render-markdown').setup({
-    completions = { lsp = { enabled = true } },
-    sign = {
-        enabled = false
+require("kanagawa").setup({
+    colors = {
+        theme = {
+            all = {
+                ui = {
+                    bg_gutter = "none"
+                }
+            }
+        }
     }
 })
 
+vim.cmd.colorscheme("kanagawa-dragon")
+
 require("nvim-autopairs").setup()
 
-vim.cmd.colorscheme("gruvbox")
 
 vim.keymap.set("n", "gba", ":Gitsigns blame<CR>")
 vim.keymap.set("n", "gbl", ":Gitsigns blame_line<CR>")
