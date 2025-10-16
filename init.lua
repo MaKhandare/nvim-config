@@ -213,7 +213,6 @@ vim.lsp.enable({
     -- "typescript-language-server",
     "pylsp",
     "terraformls",
-    "marksman"
 })
 
 vim.lsp.config("terraformls", {})
