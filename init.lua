@@ -117,12 +117,7 @@ vim.pack.add({
 
     -- auto pair
     { src = "https://github.com/windwp/nvim-autopairs" },
-
-    { src = "https://github.com/kylechui/nvim-surround" },
-
 })
-
-require("nvim-surround").setup({})
 
 require("kanagawa").setup({
     colors = {
