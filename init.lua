@@ -75,6 +75,10 @@ vim.keymap.set("n", ">", "<C-w>5>")
 vim.keymap.set("n", "+", "<C-w>5+")
 vim.keymap.set("n", "-", "<C-w>5-")
 
+-- quickfix navigation
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+
 --
 -- plugins
 --
