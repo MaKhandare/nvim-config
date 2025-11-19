@@ -216,6 +216,7 @@ vim.lsp.enable({
     -- "typescript-language-server",
     "pylsp",
     "terraformls",
+    "harper_ls"
 })
 
 vim.lsp.config("terraformls", {})
@@ -228,6 +229,9 @@ vim.lsp.config("lua_ls", {
             }
         }
     }
+})
+
+vim.lsp.config("harper_ls", {
 })
 
 vim.lsp.config("pylsp", {
