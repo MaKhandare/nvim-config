@@ -199,7 +199,7 @@ require("blink.cmp").setup({
 -- so far only python is needed.
 -- rest seems to work good enough for now?
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "python" },
+    ensure_installed = { "python", "elixir", "eex", "heex" },
     sync_install = false,
     auto_install = false,
     highlight = {
@@ -216,10 +216,16 @@ vim.lsp.enable({
     -- "typescript-language-server",
     "pylsp",
     "terraformls",
-    "harper_ls"
+    "harper_ls",
+    "elixir-ls"
 })
 
 vim.lsp.config("terraformls", {})
+
+vim.lsp.config("elixir-ls", {
+    cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+    root_markers = { "mix.exs" },
+})
 
 vim.lsp.config("lua_ls", {
     settings = {
