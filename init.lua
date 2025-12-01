@@ -84,8 +84,7 @@ vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 --
 
 vim.pack.add({
-    -- colorschemes
-    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+    -- colorscheme
     { src = "https://github.com/rebelot/kanagawa.nvim" },
 
     -- lsp
