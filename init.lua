@@ -196,8 +196,6 @@ require("blink.cmp").setup({
     }
 })
 
--- so far only python is needed.
--- rest seems to work good enough for now?
 require("nvim-treesitter.configs").setup({
     ensure_installed = { "python", "elixir", "eex", "heex" },
     sync_install = false,
@@ -213,7 +211,7 @@ vim.lsp.enable({
     "lua_ls",
     "rust_analyzer",
     "omnisharp",
-    -- "typescript-language-server",
+    "typescript-language-server",
     "pylsp",
     "terraformls",
     "harper_ls",
